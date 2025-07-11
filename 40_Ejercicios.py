@@ -922,7 +922,7 @@ while not salir: #Bucle de ejecución principal
 
                                 chatVPT(resumen,velocidad=3)
 
-                        empleado1 = Empleado("Vielko",100000,"Maviell Comercial SRL")
+                        empleado1 = Empleado("Vielko",100000,"Mi Casa Comercial SRL")
                         empleado1.realizar_descuento()
                         pausar()
 
