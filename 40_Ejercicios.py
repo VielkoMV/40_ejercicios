@@ -513,9 +513,13 @@ while not salir: #Bucle de ejecución principal
                     case 0:#Volver al menú principal
                         break
 
+        
+
         case 3:#Ejercicios 21 al 30
             
-            while True:
+            pant_carga("cargando ejercicios",tiempo=2.5)
+
+            while True:#Bucle de ejercicios del 21 al 30
                 ejercicio = mostrar_menu("🔡 cantidad de vocales",
                                         "❌ eliminar duplicados",
                                         "🔑 validación de contraseña",
@@ -526,24 +530,100 @@ while not salir: #Bucle de ejecución principal
                                         "🛒 clase Producto",
                                         "🟩 clase Rectangulo",
                                         "📘 clase Libro",
+<<<<<<< Updated upstream
                                         opcion_inicial=21,
                                         mensaje_salir="↩️  Volver al menú principal"
                                         )
+=======
+                                        "↩️  Volver al menú principal",
+                                        nombreMenu="Ejercicios 11 al 20",opcion_inicial=21)
+>>>>>>> Stashed changes
                 
                 match ejercicio:#Ejercicios del 21 al 30 (DESARROLLO)
 
                     case 21:#Lee una frase y muestra cuántas vocales tiene
-                        pass
+                        frase = input("Escribe una frase: ")
+
+                        vocales = "aeiouAEIOU"
+                        contador = 0
+
+                        for letra in frase:
+                            if letra in vocales:
+                                contador += 1
+
+                        print(f"La frase tiene {contador} vocales.")
+                        pausar()
 
                     case 22:#Elimina los duplicados de una lista de números
-                        pass
+                        numero = []
+
+                        for i in range(8):
+                            n = int(input("Introduce 8 numeros: "))
+                            numero.append(n)
+
+                        sin_duplicados = list(set(numero))
+
+                        print("Lista sin duplicados:", sin_duplicados)
+                        pausar()
 
                     case 23:#Valida una contraseña con reglas mínimas (longitud, número, mayúscula)
-                        pass
+                        contraseña = input("Introduce una contraseña: ")
+
+                        longitud_valida = len(contraseña) >= 8
+                        mayuscula_valida = any(c.isupper() for c in contraseña)
+                        numero_valido = any(c.isdigit() for c in contraseña)
+
+                        if longitud_valida and mayuscula_valida and numero_valido:
+                            print("Contraseña valida.")
+                        else:
+                            print("Contraseña invalida. Requiere:")
+                            if not longitud_valida:
+                                print("- Al menos 8 caracteres.")
+                            if not mayuscula_valida:
+                                print("- Al menos una letra mayuscula.")
+                            if not numero_valido:
+                                print("- Al menos un numero.")
+                        pausar()
 
                     case 24:#Crea una agenda de contactos que permita agregar y buscar por nombre
-                        pass
+                        agenda = {}
 
+                        def agregar_contacto():
+                            nombre = input("Introduce el nombre: ")
+                            telefono = input("Introduce el telefono: ")
+                            agenda[nombre] = telefono
+                            print(f"Contacto '{nombre}' agregado.\n")
+                            pausar()
+
+                        def buscar_contacto():
+                            nombre = input("Introduce el nombre a buscar: ")
+                            if nombre in agenda:
+                                print(f"{nombre}: {agenda[nombre]}\n")
+                            else:
+                                print(f"No se encontró el contacto '{nombre}'.\n")
+                            pausar()
+
+                        def mostrar_menu():
+                            print("Agenda de Contactos")
+                            print("1. Agregar contacto")
+                            print("2. Buscar contacto")
+                            print("3. Salir")
+
+                        while True:
+                            mostrar_menu()
+                            opcion = input("Selecciona una opcion: ")
+
+                            if opcion == "1":
+                                agregar_contacto()
+                            elif opcion == "2":
+                                buscar_contacto()
+                            elif opcion == "3":
+                                print("Hasta luego")
+                                break
+                            else:
+                                print("Opcion no valida. Intenta de nuevo.\n")
+                        pausar()
+                        
                     case 25:#Simula un menú de opciones (saludar, calcular, salir)
                         pass
 
@@ -797,7 +877,7 @@ while not salir: #Bucle de ejecución principal
 
                     case 36:#
                         pass
-                    
+
                     case 37:#
                         pass
 
