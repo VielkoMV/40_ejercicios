@@ -221,8 +221,9 @@ while not salir: #Bucle de ejecución principal
                 os.system("cls")
                 ejercicio = mostrar_menu("🌡️   Convertidor de grados",
                                          "🔢  Calculadora",
-                                         "↔️   Verificar palíndromo",
+                                         "↔️  Verificar palíndromo",
                                          "➰  Sucesión Fibonacci",
+<<<<<<< Updated upstream
                                          "❗  Factorial recursivo",
                                          "🔸  Numero mayor y menor",
                                          "#️⃣   Numero primo",
