@@ -598,14 +598,14 @@ while not salir: #Bucle de ejecución principal
                                 print(f"No se encontró el contacto '{nombre}'.\n")
                             pausar()
 
-                        def mostrar_menu():
+                        def mostrar_menuA():
                             print("Agenda de Contactos")
                             print("1. Agregar contacto")
                             print("2. Buscar contacto")
                             print("3. Salir")
 
                         while True:
-                            mostrar_menu()
+                            mostrar_menuA()
                             opcion = input("Selecciona una opcion: ")
 
                             if opcion == "1":
@@ -620,7 +620,38 @@ while not salir: #Bucle de ejecución principal
                         pausar()
                         
                     case 25:#Simula un menú de opciones (saludar, calcular, salir)
-                        pass
+                        def saludar():
+                            print("Hola, Espero que tengas un buen dia.\n")
+
+                        def calcular():
+                            try:
+                                num1 = float(input("Introduce el primer numero: "))
+                                num2 = float(input("Introduce el segundo numero: "))
+                                resultado = num1 + num2
+                                print(f"La suma de {num1} + {num2} es {resultado}\n")
+                            except ValueError:
+                                print("Por favor, introduce solo números válidos.\n")
+
+                        def mostrar_menuM():
+                            print("Menu de Opciones:")
+                            print("1. Saludar")
+                            print("2. Calcular suma")
+                            print("3. Salir")
+
+                        while True:
+                            mostrar_menuM()
+                            opcion = input("Selecciona una opcion (1-3): ")
+
+                            if opcion == "1":
+                                saludar()
+                            elif opcion == "2":
+                                calcular()
+                            elif opcion == "3":
+                                print("Programa finalizado")
+                                break
+                            else:
+                                print("Opcion no valida. Intenta de nuevo.\n")
+                        pausar()
 
                     case 26:#Crea una clase Persona con atributos nombre y edad, e imprime sus datos
                         pass
@@ -636,6 +667,7 @@ while not salir: #Bucle de ejecución principal
 
                     case 30:#Implementa una clase Libro con atributos título, autor y año
                         pass
+
                     case 0:#Volver al menú principal
                         break
                     
@@ -884,6 +916,7 @@ while not salir: #Bucle de ejecución principal
 
                     case 40:#
                         pass
+
                     case 0:#Volver al menú principal
                         break
 
