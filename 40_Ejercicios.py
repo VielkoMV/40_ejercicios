@@ -422,8 +422,22 @@ while not salir: #Bucle de ejecución principal
                         print("El numero mayor es:", mayor)
                         print("El numero menor es:", menor)
 
-                    case 17:#
-                        pass
+                    case 17:#Verifica si un número es primo.
+                        numero = int(input("Introduce un numero: "))
+
+                        if numero <= 1:
+                            print("No es primo")
+                        else:
+                            es_primo = True
+                            for i in range(2, int(numero ** 0.5) + 1):
+                                if numero % i == 0:
+                                    es_primo = False
+                                    break
+
+                            if es_primo:
+                                print("Es primo")
+                            else:
+                                print("No es primo")
 
                     case 18:#
                         pass
