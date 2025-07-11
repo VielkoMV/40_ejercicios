@@ -766,16 +766,16 @@ while not salir: #Bucle de ejecución principal
 
             while True:#Bucle de ejercicios del 31 al 40
                 os.system("cls")
-                ejercicio = mostrar_menu("🏍️  Clase Vehículo",
-                                         "📝 Clase Estudiante ",
-                                         "🛒 Clase Tienda ",
-                                         "💼 Clase Empleado ",
-                                         "📄 Clase Factura",
-                                         "🛠️  En proceso...",
-                                         "🛠️  En proceso...",
-                                         "🛠️  En proceso...",
-                                         "🛠️  En proceso...",
-                                         "🛠️  En proceso...",
+                ejercicio = mostrar_menu("🏍️   Clase Vehículo",
+                                         "📝  Clase Estudiante ",
+                                         "🛒  Clase Tienda ",
+                                         "💼  Clase Empleado ",
+                                         "📄  Clase Factura",
+                                         "📦  Clase Figura",
+                                         "📋  Clase Agenda",
+                                         "🐶  Clase Animal",
+                                         "🎮  Clase Juego",
+                                         "🌡   Clase Termometro",
                                         nombreMenu="Ejercicios 31 al 40",
                                         opcion_inicial=31,
                                         mensaje_salir= "↩️  Volver al menú principal"
