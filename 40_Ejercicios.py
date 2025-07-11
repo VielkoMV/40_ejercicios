@@ -1,5 +1,5 @@
 from fractions import Fraction
-import os,random,time
+import os,random,time,math
 from funciones_Vielko import mostrar_menu,chatVPT,pant_carga,mostrar_calc,formato_moneda
 
 def pausar():
@@ -991,20 +991,150 @@ while not salir: #Bucle de ejecución principal
 
                         pausar()
 
-                    case 36:#
-                        pass
+                    case 36:#Programa una clase Figura con método calcular_area y subclases Círculo y Cuadrado.
+                        class Figura:
+                            def calcular_area(self):
+                                raise NotImplementedError("Este metodo debe ser utilizado por una subclase")
 
-                    case 37:#
-                        pass
+                        class Circulo(Figura):
+                            def __init__(self, radio):
+                                self.radio = radio
 
-                    case 38:#
-                        pass
+                            def calcular_area(self):
+                                return math.pi * self.radio ** 2
 
-                    case 39:#
-                        pass
+                        class Cuadrado(Figura):
+                            def __init__(self, lado):
+                                self.lado = lado
 
-                    case 40:#
-                        pass
+                            def calcular_area(self):
+                                return self.lado ** 2
+
+                        circulo = Circulo(3)
+                        print(f"area del circulo: {circulo.calcular_area():.2f}")
+
+                        cuadrado = Cuadrado(4)
+                        print(f"area del cuadrado: {cuadrado.calcular_area()}")
+                        pausar()
+
+                    case 37:#Crea una clase Agenda con métodos para agregar, eliminar y buscar contactos.
+                        class Agenda:
+                            def __init__(self):
+                                self.contactos = {}
+
+                            def agregar_contacto(self, nombre, telefono):
+                                if nombre in self.contactos:
+                                    print(f"El contacto '{nombre}' ya existe.")
+                                else:
+                                    self.contactos[nombre] = telefono
+                                    print(f"Contacto '{nombre}' agregado.")
+
+                            def eliminar_contacto(self, nombre):
+                                if nombre in self.contactos:
+                                    del self.contactos[nombre]
+                                    print(f"Contacto '{nombre}' eliminado.")
+                                else:
+                                    print(f"No se encontro el contacto '{nombre}'.")
+
+                            def buscar_contacto(self, nombre):
+                                if nombre in self.contactos:
+                                    print(f"{nombre}: {self.contactos[nombre]}")
+                                else:
+                                    print(f"Contacto '{nombre}' no encontrado.")
+
+                            def mostrar_todos(self):
+                                if not self.contactos:
+                                    print("La agenda está vacia.")
+                                else:
+                                    print("Contactos en la agenda:")
+                                    for nombre, telefono in self.contactos.items():
+                                        print(f"- {nombre}: {telefono}")
+
+                        mi_agenda = Agenda()
+
+                        mi_agenda.agregar_contacto("Ana", "809-123-4567")
+                        mi_agenda.agregar_contacto("Luis", "809-555-7890")
+                        mi_agenda.buscar_contacto("Ana")
+                        mi_agenda.eliminar_contacto("Luis")
+                        mi_agenda.mostrar_todos()
+                        pausar()
+
+                    case 38:#Diseña una clase Animal con subclases Perro y Gato que implementen el método hacer_sonido().
+                        class Animal:
+                            def __init__(self, nombre):
+                                self.nombre = nombre
+
+                            def hacer_sonido(self):
+                                raise NotImplementedError("Este método debe ser implementado por las subclases")
+
+                        class Perro(Animal):
+                            def hacer_sonido(self):
+                                return f"{self.nombre} dice: Guau"
+
+                        class Gato(Animal):
+                            def hacer_sonido(self):
+                                return f"{self.nombre} dice: Miau"
+
+                        perro1 = Perro("Firulais")
+                        gato1 = Gato("Mishi")
+
+                        print(perro1.hacer_sonido())
+                        print(gato1.hacer_sonido())
+                        pausar()
+
+                    case 39:#Crea una clase Juego con un método que indique si el jugador ha ganado
+                        class Juego:
+                            def __init__(self, puntaje_objetivo):
+                                self.puntaje_objetivo = puntaje_objetivo
+                                self.puntaje_jugador = 0
+
+                            def actualizar_puntaje(self, puntos):
+                                self.puntaje_jugador += puntos
+
+                            def ha_ganado(self):
+                                return self.puntaje_jugador >= self.puntaje_objetivo
+
+                            def mostrar_estado(self):
+                                if self.ha_ganado():
+                                    print(f"Has ganado con {self.puntaje_jugador} puntos.")
+                                else:
+                                    print(f"Puntaje actual: {self.puntaje_jugador}.")
+
+                        juego = Juego(10)
+
+                        juego.actualizar_puntaje(4)
+                        juego.mostrar_estado()  
+
+                        juego.actualizar_puntaje(7)
+                        juego.mostrar_estado() 
+                        pausar()
+
+                    case 40:#Implementa una clase SensorTemperatura que registre lecturas y calcule la media.
+                        class SensorTemperatura:
+                            def __init__(self):
+                                self.lecturas = []
+
+                            def registrar_lectura(self, temperatura):
+                                self.lecturas.append(temperatura)
+                                print(f"Lectura registrada: {temperatura} grados")
+
+                            def calcular_media(self):
+                                if not self.lecturas:
+                                    print("No hay lecturas registradas.")
+                                    return None
+                                return sum(self.lecturas) / len(self.lecturas)
+
+                            def mostrar_media(self):
+                                media = self.calcular_media()
+                                if media is not None:
+                                    print(f"Temperatura media: {media:.2f} grados")
+
+                        sensor = SensorTemperatura()
+                        sensor.registrar_lectura(23.5)
+                        sensor.registrar_lectura(24.0)
+                        sensor.registrar_lectura(22.8)
+                        sensor.mostrar_media()
+                        pausar()
 
                     case 0:#Volver al menú principal
                         break
