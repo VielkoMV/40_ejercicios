@@ -224,11 +224,11 @@ while not salir: #Bucle de ejecución principal
                                          "↔️   Verificar palíndromo",
                                          "➰  Sucesión Fibonacci",
                                          "❗  Factorial recursivo",
-                                         "🛠️  Numero mayor y menor",
-                                         "🛠️   En proceso...",
-                                         "🛠️   En proceso...",
-                                         "🛠️   En proceso...",
-                                         "🛠️   En proceso...",
+                                         "🔸  Numero mayor y menor",
+                                         "#️⃣   Numero primo",
+                                         "🏧  Cajero automático",
+                                         "📚  Calificaciones",
+                                         "🛍️   Tienda",
                                          "↩️   Volver al menú principal",
                                         nombreMenu="Ejercicios 11 al 20",opcion_inicial=11)
                 
@@ -507,44 +507,45 @@ while not salir: #Bucle de ejecución principal
 
         case 3:#Ejercicios 21 al 30
             
-            ejercicio = mostrar_menu("🔡 cantidad de vocales",
-                                     "❌ eliminar duplicados",
-                                     "🔑 validación de contraseña",
-                                     "📒 agenda de contactos",
-                                     "🤖 opciones multiples",
-                                     "🧑 clase persona",
-                                     "🏦 clase CuentaBancaria",
-                                     "🛒 clase Producto",
-                                     "🟩 clase Rectangulo",
-                                     "📘 clase Libro",
-                                     "↩️  Volver al menú principal",
-                                     opcion_inicial=21
-                                     )
-            
-            match ejercicio:#Ejercicios del 21 al 30 (DESARROLLO)
+            while True:
+                ejercicio = mostrar_menu("🔡 cantidad de vocales",
+                                        "❌ eliminar duplicados",
+                                        "🔑 validación de contraseña",
+                                        "📒 agenda de contactos",
+                                        "🤖 opciones multiples",
+                                        "🧑 clase persona",
+                                        "🏦 clase CuentaBancaria",
+                                        "🛒 clase Producto",
+                                        "🟩 clase Rectangulo",
+                                        "📘 clase Libro",
+                                        "↩️  Volver al menú principal",
+                                        opcion_inicial=21
+                                        )
+                
+                match ejercicio:#Ejercicios del 21 al 30 (DESARROLLO)
 
-                case 21:#Lee una frase y muestra cuántas vocales tiene
-                    pass
-                case 22:#Elimina los duplicados de una lista de números
-                    pass
-                case 23:#Valida una contraseña con reglas mínimas (longitud, número, mayúscula)
-                    pass
-                case 24:#Crea una agenda de contactos que permita agregar y buscar por nombre
-                    pass
-                case 25:#Simula un menú de opciones (saludar, calcular, salir)
-                    pass
-                case 26:#Crea una clase Persona con atributos nombre y edad, e imprime sus datos
-                    pass
-                case 27:#Implementa una clase CuentaBancaria con métodos para depositar y retirar
-                    pass
-                case 28:#Diseña una clase Producto que calcule el total con impuestos
-                    pass
-                case 29:#Crea una clase Rectángulo que calcule el área y el perímetro
-                    pass
-                case 30:#Implementa una clase Libro con atributos título, autor y año
-                    pass
-                case 31:#Volver al menú principal
-                    break
+                    case 21:#Lee una frase y muestra cuántas vocales tiene
+                        pass
+                    case 22:#Elimina los duplicados de una lista de números
+                        pass
+                    case 23:#Valida una contraseña con reglas mínimas (longitud, número, mayúscula)
+                        pass
+                    case 24:#Crea una agenda de contactos que permita agregar y buscar por nombre
+                        pass
+                    case 25:#Simula un menú de opciones (saludar, calcular, salir)
+                        pass
+                    case 26:#Crea una clase Persona con atributos nombre y edad, e imprime sus datos
+                        pass
+                    case 27:#Implementa una clase CuentaBancaria con métodos para depositar y retirar
+                        pass
+                    case 28:#Diseña una clase Producto que calcule el total con impuestos
+                        pass
+                    case 29:#Crea una clase Rectángulo que calcule el área y el perímetro
+                        pass
+                    case 30:#Implementa una clase Libro con atributos título, autor y año
+                        pass
+                    case 31:#Volver al menú principal
+                        break
                     
         case 4:#Ejercicios 31 al 40
 
