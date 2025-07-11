@@ -421,12 +421,14 @@ while not salir: #Bucle de ejecución principal
 
                         print("El numero mayor es:", mayor)
                         print("El numero menor es:", menor)
+                        pausar()
 
                     case 17:#Verifica si un número es primo.
                         numero = int(input("Introduce un numero: "))
 
                         if numero <= 1:
                             print("No es primo")
+                            pausar()
                         else:
                             es_primo = True
                             for i in range(2, int(numero ** 0.5) + 1):
@@ -436,8 +438,11 @@ while not salir: #Bucle de ejecución principal
 
                             if es_primo:
                                 print("Es primo")
+                                pausar()
                             else:
                                 print("No es primo")
+                                pausar()
+                        
 
                     case 18:#Simula un cajero automático con saldo y retiros.
                         saldo = 1000
@@ -466,6 +471,7 @@ while not salir: #Bucle de ejecución principal
                                     print("Entrada no valida. Intenta con un numero.")
                             else:
                                 print("Opción no reconocida. Escribe 's' o 'n'.")
+                        pausar()
 
                     case 19:#Crea un diccionario de estudiantes con sus calificaciones.
                         estudiantes = {
@@ -478,15 +484,16 @@ while not salir: #Bucle de ejecución principal
 
                         for nombre, calificacion in estudiantes.items():
                             print(f"{nombre} tiene una calificacion de {calificacion}")
+                        pausar()
 
                     case 20:#Simula una tienda que permita agregar productos y calcular el total.
                         carrito = {}
-
                         print("Bienvenido a la Tienda\n")
 
                         while True:
                             producto = input("Introduce el nombre del producto (o 'fin' para terminar): ")
                             if producto.lower() == "fin":
+                                print("Gracias por usar nuestros servicios")
                                 break
                             try:
                                 precio = float(input(f"Introduce el precio de '{producto}': "))
@@ -501,12 +508,14 @@ while not salir: #Bucle de ejecución principal
                             total += precio
 
                         print(f"\nTotal a pagar: ${total}")
+                        pausar()
 
                     case 21:#Volver al menú principal
                         break
 
         case 3:#Ejercicios 21 al 30
             
+<<<<<<< Updated upstream
             while True:
                 ejercicio = mostrar_menu("🔡 cantidad de vocales",
                                         "❌ eliminar duplicados",
