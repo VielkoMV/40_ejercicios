@@ -468,7 +468,7 @@ while not salir: #Bucle de ejecución principal
                                      )
             
             match ejercicio:#Ejercicios del 21 al 30 (DESARROLLO)
-                case 21:#Hola de nuevo
+                case 21:
                     pass
                 case 22:
                     pass
