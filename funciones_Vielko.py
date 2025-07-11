@@ -3,7 +3,7 @@ import os,time
 def mostrar_menu(*opcion:str,
                  opcion_inicial = 1,
                  nombreMenu = "MENÚ PRINCIPAL",
-                 mensaje_salir = "para salir ingresa ",
+                 mensaje_salir = "null",
                  opcion_salir = 0):
     '''
     muestra un menú personalizado que devuelve la opcion
@@ -23,8 +23,9 @@ def mostrar_menu(*opcion:str,
     for i,opcion in enumerate(opcion,start=opcion_inicial):
         print(f"{i}. {opcion}")
         cant_opciones += 1
-    print()
-    print(f"{mensaje_salir} {opcion_salir}".rjust(len(nombreMenu)+10))
+    if mensaje_salir != "null":
+        print()
+        print(f"{mensaje_salir} {opcion_salir}".rjust(len(nombreMenu)+10))
     print("".ljust(len(nombreMenu)+10,"="))
     rango = range(opcion_inicial,opcion_inicial+cant_opciones)
 
@@ -42,49 +43,6 @@ def mostrar_menu(*opcion:str,
                 chatVPT(f"No hay una opción {respuesta} en el menú.","Intenta de nuevo.",pausa=2)
     print()
     return respuesta
-
-def si_no(pregunta = ""):
-    '''
-    Devuelve True si el usuario responde
-    si o False si responde que no.
-
-    Argumento
-        pregunta -> La pregunta a realizar
-    '''
-    while True:
-        try:
-            print(pregunta)
-            decicion = int(input("1.Si\n2.No\nDecición: "))
-        except ValueError:
-            print("El valor ingresado no es correcto.")
-        else:
-            if decicion == 1 or decicion == 2:
-                break
-            else:
-                print("Solo puedes escoger\n1 para si\n2 para no")
-    if int(decicion) == 1:
-        return True
-    return False
-
-def formulario(*datos,nombreFormulario = "REGISTRO"):
-    '''
-    Devuelve un diccionario con información que solicita
-    al usuario. Cada dato que devuelve es str, en caso de
-    necesitar otro tipo se debe hacer un casting.
-
-    Argumentos
-        *datos -> los datos a solicitar al usuario
-        nombreFormulario -> el nombre a mostrar en el titulo por defecto es REGISTRO
-    '''
-
-
-    informacion = {}
-
-    print(f"{nombreFormulario} ".ljust(25,"="))
-    for dato in datos:
-        informacion[dato] = input(f"• {dato}: ")
-
-    return informacion
 
 def formato_moneda(monto:float,moneda = "RD"):
     '''
@@ -116,70 +74,6 @@ def formato_moneda(monto:float,moneda = "RD"):
     else:
         valor_formateado += cifra_str
     return valor_formateado
-
-def formato_telefono(tel_param = "null"):
-    '''
-    Devuelve un número con formato (8x9) xxx-xxxx.
-    Si no se le pasa el parámetro lo solicita.
-
-    Parámetros
-        :tel_param -> cadena que represente un número telefónico
-    '''
-    
-    tel_formateado = ""
-
-    if tel_param == "null":
-        while True:
-            digitos = 0
-            digitos_introducidos = ""
-            telefono = input("Teléfono: ")
-
-            for caracter in telefono:
-                if caracter.isnumeric():
-                    digitos += 1
-                    digitos_introducidos += caracter
-                else:
-                    if caracter not in "-() ":
-                        print("❌  Solo se permiten números enteros, guiones o paréntesis:")
-                        print("Ejemplos: 809000000 | 809-000-0000 | (809) 000-0000\n")
-                        break
-            
-            if  digitos != 0:
-                if digitos_introducidos[0:3] == "809" or digitos_introducidos[0:3] == "849" or digitos_introducidos[0:3] == "829":
-                    if digitos == 10:
-                        tel_formateado = "(" + digitos_introducidos[0:3] + ")" + f" {digitos_introducidos[3:6]}-{digitos_introducidos[6:]}"
-                        break
-                    else:
-                        print(f"❌ {digitos_introducidos}! Deben ser 10 números. Intenta de nuevo\n")
-                else:
-                    print("❌  Error: debe iniciar con 809, 829 u 849")
-            else:
-                print("❌  Debes ingresar números.")
-
-    else:#Si se recibe un teléfono como parámetro
-        digitos = 0
-        digitos_introducidos = ""
-        for caracter in tel_param:
-            if caracter.isnumeric():
-                digitos += 1
-                digitos_introducidos += caracter
-            else:
-                if caracter not in "-() ":
-                    print("❌  Solo se permiten números enteros, guiones o paréntesis:")
-                    print("Ejemplos: 809000000 | 809-000-0000 | (809) 000-0000\n")
-                    break
-
-        if  digitos != 0:
-            if digitos_introducidos[0:3] == "809" or digitos_introducidos[0:3] == "849" or digitos_introducidos[0:3] == "829":
-                if digitos == 10:
-                    tel_formateado += "(" + digitos_introducidos[0:3] + ")" + f" {digitos_introducidos[3:6]}-{digitos_introducidos[6:]}"
-                else:
-                    print(f"❌  {digitos_introducidos}! Deben ser 10 números. Intenta de nuevo\n")
-            else:
-                print("❌  Error: debe iniciar con 809, 829 u 849")
-        else:
-            print("❌  Debes ingresar números.")
-    return tel_formateado
 
 def chatVPT(texto1,texto2 = "",velocidad = 1,pausa = 4):
     '''
