@@ -452,7 +452,8 @@ while not salir: #Bucle de ejecución principal
                                      "↩️  Volver al menú principal",
                                      opcion_inicial=21
                                      )
-            match ejercicio:
+            
+            match ejercicio:#Ejercicios del 21 al 30 (DESARROLLO)
                 case 21:
                     pass
                 case 22:
@@ -476,7 +477,6 @@ while not salir: #Bucle de ejecución principal
                 case 31:
                     break
                     
-
         case 4:#Ejercicios 31 al 40
 
             pant_carga("cargando ejercicios",tiempo=2.5)
