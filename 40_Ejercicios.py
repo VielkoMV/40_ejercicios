@@ -220,16 +220,16 @@ while not salir: #Bucle de ejecución principal
 
             while True:#Bucle de ejercicios del 11 al 20
                 os.system("cls")
-                ejercicio = mostrar_menu("🌡️   Convertidor de grados",
-                                         "🔢  Calculadora",
-                                         "↔️   Verificar palíndromo",
-                                         "➰  Sucesión Fibonacci",
-                                         "❗  Factorial recursivo",
-                                         "🔸  Numero mayor y menor",
-                                         "#️⃣   Numero primo",
-                                         "🏧  Cajero automático",
-                                         "📚  Calificaciones",
-                                         "🛍️   Tienda",
+                ejercicio = mostrar_menu("🌡️  Convertidor de grados",
+                                         "🔢 Calculadora",
+                                         "↔️  Verificar palíndromo",
+                                         "➰ Sucesión Fibonacci",
+                                         "❗ Factorial recursivo",
+                                         "🔸 Numero mayor y menor",
+                                         "#️⃣  Numero primo",
+                                         "🏧 Cajero automático",
+                                         "📚 Calificaciones",
+                                         "🛍️  Tienda",
                                          mensaje_salir="↩️   Volver al menú principal",
                                         nombreMenu="Ejercicios 11 al 20",opcion_inicial=11)
                 
@@ -596,14 +596,14 @@ while not salir: #Bucle de ejecución principal
                                 print(f"No se encontró el contacto '{nombre}'.\n")
                             pausar()
 
-                        def mostrar_menuA():
+                        def mostrar_menu():
                             print("Agenda de Contactos")
                             print("1. Agregar contacto")
                             print("2. Buscar contacto")
                             print("3. Salir")
 
                         while True:
-                            mostrar_menuA()
+                            mostrar_menu()
                             opcion = input("Selecciona una opcion: ")
 
                             if opcion == "1":
@@ -649,7 +649,7 @@ while not salir: #Bucle de ejecución principal
                                 break
                             else:
                                 print("Opcion no valida. Intenta de nuevo.\n")
-                        pausar()
+                            pausar()
 
                     case 26:#Crea una clase Persona con atributos nombre y edad, e imprime sus datos
                         class Persona:
