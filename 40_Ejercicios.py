@@ -409,7 +409,7 @@ while not salir: #Bucle de ejecución principal
                         pausar()
 
                     case 16:#Encuentra el número mayor y menor en una lista.
-
+                        #cambio nuevo
                         numero = []
 
                         for i in range(5):
