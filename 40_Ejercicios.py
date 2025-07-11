@@ -513,8 +513,6 @@ while not salir: #Bucle de ejecución principal
                     case 0:#Volver al menú principal
                         break
 
-        
-
         case 3:#Ejercicios 21 al 30
             
             pant_carga("cargando ejercicios",tiempo=2.5)
@@ -654,19 +652,110 @@ while not salir: #Bucle de ejecución principal
                         pausar()
 
                     case 26:#Crea una clase Persona con atributos nombre y edad, e imprime sus datos
-                        pass
+                        class Persona:
+                            def __init__(self, nombre, edad):
+                                self.nombre = nombre
+                                self.edad = edad
+
+                            def mostrar_datosP(self):
+                                print(f"Nombre: {self.nombre}")
+                                print(f"Edad: {self.edad} años")
+
+                        persona1 = Persona("Ana", 25)
+
+                        persona1.mostrar_datosP()
+                        pausar()
 
                     case 27:#Implementa una clase CuentaBancaria con métodos para depositar y retirar
-                        pass
+                        class CuentaBancaria:
+                            def __init__(self, titular, saldo_inicial=0):
+                                self.titular = titular
+                                self.saldo = saldo_inicial
+
+                            def depositar(self, cantidad):
+                                if cantidad > 0:
+                                    self.saldo += cantidad
+                                    print(f"Deposito de ${cantidad} realizado. Nuevo saldo: ${self.saldo}")
+                                else:
+                                    print("La cantidad a depositar debe ser mayor que 0.")
+
+                            def retirar(self, cantidad):
+                                if cantidad > self.saldo:
+                                    print("Fondos insuficientes.")
+                                elif cantidad <= 0:
+                                    print("La cantidad a retirar debe ser mayor que 0.")
+                                else:
+                                    self.saldo -= cantidad
+                                    print(f"Retiro de ${cantidad} realizado. Nuevo saldo: ${self.saldo}")
+
+                            def mostrar_saldo(self):
+                                print(f"Titular: {self.titular} | Saldo actual: ${self.saldo}")
+
+                        cuenta = CuentaBancaria("Juan", 500)
+                        cuenta.mostrar_saldo()
+                        cuenta.depositar(200)
+                        cuenta.retirar(100)
+                        cuenta.retirar(1000)
+                        pausar()
 
                     case 28:#Diseña una clase Producto que calcule el total con impuestos
-                        pass
+                        class Producto:
+                            def __init__(self, nombre, precio, impuesto):
+                                self.nombre = nombre
+                                self.precio = precio 
+                                self.impuesto = impuesto 
+
+                            def calcular_total(self):
+                                total = self.precio + (self.precio * self.impuesto / 100)
+                                return total
+
+                            def mostrar_detalle(self):
+                                print(f"Producto: {self.nombre}")
+                                print(f"Precio base: ${self.precio}")
+                                print(f"Impuesto: {self.impuesto}%")
+                                print(f"Total con impuestos: ${self.calcular_total():.2f}")
+
+                        producto1 = Producto("Laptop", 1000, 18)
+                        producto1.mostrar_detalle()
+                        pausar()
 
                     case 29:#Crea una clase Rectángulo que calcule el área y el perímetro
-                        pass
+                        class Rectangulo:
+                            def __init__(self, base, altura):
+                                self.base = base
+                                self.altura = altura
+
+                            def calcular_area(self):
+                                return self.base * self.altura
+
+                            def calcular_perimetro(self):
+                                return 2 * (self.base + self.altura)
+
+                            def mostrar_datosR(self):
+                                print(f"Base: {self.base}")
+                                print(f"Altura: {self.altura}")
+                                print(f"Area: {self.calcular_area()}")
+                                print(f"Perimetro: {self.calcular_perimetro()}")
+
+                        rect1 = Rectangulo(5, 3)
+                        rect1.mostrar_datosR()
+                        pausar()
 
                     case 30:#Implementa una clase Libro con atributos título, autor y año
-                        pass
+                        class Libro:
+                            def __init__(self, titulo, autor, año):
+                                self.titulo = titulo
+                                self.autor = autor
+                                self.año = año
+
+                            def mostrar_infoL(self):
+                                print(f"Titulo: {self.titulo}")
+                                print(f"Autor: {self.autor}")
+                                print(f"Año: {self.año}")
+
+                        libro1 = Libro("Cien años de soledad", "Gabriel  Marquez", 1967)
+                        libro1.mostrar_infoL()
+                        pausar()
 
                     case 0:#Volver al menú principal
                         break
