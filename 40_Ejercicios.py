@@ -13,7 +13,8 @@ while not salir: #Bucle de ejecución principal
                             "Ejercicios 11 al 20",
                             "Ejercicios 21 al 30",
                             "Ejercicios 31 al 40",
-                            "salir")
+                            mensaje_salir="Salir del sistema"
+                            )
 
     match respuesta:#MENÚ PRINCIPAL
         
@@ -33,7 +34,7 @@ while not salir: #Bucle de ejecución principal
                                         " 📈  Promedio de números",
                                         " 🔠  Conteo de palabras",
                                         "🧮  Ordenar números",
-                                        "↩️   Volver al menú principal",
+                                        mensaje_salir="↩️   Volver al menú principal",
                                         nombreMenu="Ejercicios 1 al 10")
                 
                 match ejercicio:#EJERCICIOS 1 AL 10 (DESARROLLO)
@@ -210,7 +211,7 @@ while not salir: #Bucle de ejecución principal
                                     pausar()
                                     break
                     
-                    case 11:#Volver al menú principal
+                    case 0:#Volver al menú principal
                         break
 
         case 2:#Ejercicios 11 al 20
@@ -229,7 +230,7 @@ while not salir: #Bucle de ejecución principal
                                          "🏧  Cajero automático",
                                          "📚  Calificaciones",
                                          "🛍️   Tienda",
-                                         "↩️   Volver al menú principal",
+                                         mensaje_salir="↩️   Volver al menú principal",
                                         nombreMenu="Ejercicios 11 al 20",opcion_inicial=11)
                 
                 match ejercicio:#EJERCICIOS 11 AL 20 (DESARROLLO)
@@ -502,7 +503,7 @@ while not salir: #Bucle de ejecución principal
 
                         print(f"\nTotal a pagar: ${total}")
 
-                    case 21:#Volver al menú principal
+                    case 0:#Volver al menú principal
                         break
 
         case 3:#Ejercicios 21 al 30
@@ -518,8 +519,8 @@ while not salir: #Bucle de ejecución principal
                                         "🛒 clase Producto",
                                         "🟩 clase Rectangulo",
                                         "📘 clase Libro",
-                                        "↩️  Volver al menú principal",
-                                        opcion_inicial=21
+                                        opcion_inicial=21,
+                                        mensaje_salir="↩️  Volver al menú principal"
                                         )
                 
                 match ejercicio:#Ejercicios del 21 al 30 (DESARROLLO)
@@ -544,7 +545,7 @@ while not salir: #Bucle de ejecución principal
                         pass
                     case 30:#Implementa una clase Libro con atributos título, autor y año
                         pass
-                    case 31:#Volver al menú principal
+                    case 0:#Volver al menú principal
                         break
                     
         case 4:#Ejercicios 31 al 40
@@ -563,9 +564,10 @@ while not salir: #Bucle de ejecución principal
                                          "🛠️  En proceso...",
                                          "🛠️  En proceso...",
                                          "🛠️  En proceso...",
-                                         "↩️  Volver al menú principal ",
                                         nombreMenu="Ejercicios 31 al 40",
-                                        opcion_inicial=31)
+                                        opcion_inicial=31,
+                                        mensaje_salir= "↩️  Volver al menú principal"
+                                        )
                 
                 match ejercicio:#EJERCICIOS 31 AL 40 (DESARROLLO)
 
@@ -787,9 +789,9 @@ while not salir: #Bucle de ejecución principal
                         pass
                     case 40:#
                         pass
-                    case 41:#Volver al menú principal
+                    case 0:#Volver al menú principal
                         break
 
-        case 5:#salir
+        case 0:#salir
             chatVPT("😊  ¡Hasta pronto!")
             salir = True

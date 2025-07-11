@@ -1,6 +1,10 @@
 import os,time
 
-def mostrar_menu(*opcion:str,opcion_inicial = 1,nombreMenu = "MENÚ PRINCIPAL"):
+def mostrar_menu(*opcion:str,
+                 opcion_inicial = 1,
+                 nombreMenu = "MENÚ PRINCIPAL",
+                 mensaje_salir = "para salir ingresa ",
+                 opcion_salir = 0):
     '''
     muestra un menú personalizado que devuelve la opcion
     seleccionada por el usuario.
@@ -8,14 +12,19 @@ def mostrar_menu(*opcion:str,opcion_inicial = 1,nombreMenu = "MENÚ PRINCIPAL"):
     devuelve un int con la opcion del usuario.
 
     Argumentos
-        :*opcion -> nombre de cada una de las opciones
-        :nombreMenu -> nombre a mostrar en el menú
+        *opcion -> nombre de cada una de las opciones
+        opcion_inicial -> índice de la primera opción
+        nombreMenu -> nombre a mostrar en el menú
+        mensaje_salir -> comentario de salida
+        opcion_salir -> opcion para salir del menú
     '''
     cant_opciones = 0
     print(f"{nombreMenu} ".ljust(len(nombreMenu)+10,"="))
     for i,opcion in enumerate(opcion,start=opcion_inicial):
         print(f"{i}. {opcion}")
         cant_opciones += 1
+    print()
+    print(f"{mensaje_salir} {opcion_salir}".rjust(len(nombreMenu)+10))
     print("".ljust(len(nombreMenu)+10,"="))
     rango = range(opcion_inicial,opcion_inicial+cant_opciones)
 
@@ -27,7 +36,7 @@ def mostrar_menu(*opcion:str,opcion_inicial = 1,nombreMenu = "MENÚ PRINCIPAL"):
         except ValueError:
             print("Solo se permiten números.")
         else:
-            if respuesta in rango:
+            if respuesta in rango or respuesta == opcion_salir:
                 opcion_valida = True
             else:
                 chatVPT(f"No hay una opción {respuesta} en el menú.","Intenta de nuevo.",pausa=2)
