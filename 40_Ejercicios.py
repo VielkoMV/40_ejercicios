@@ -220,16 +220,16 @@ while not salir: #Bucle de ejecución principal
 
             while True:#Bucle de ejercicios del 11 al 20
                 os.system("cls")
-                ejercicio = mostrar_menu("🌡️   Convertidor de grados",
-                                         "🔢  Calculadora",
-                                         "↔️  Verificar palíndromo",
-                                         "➰  Sucesión Fibonacci",
-                                         "❗   Factorial recursivo",
-                                         "🔸  Numero mayor y menor",
-                                         "#️⃣  Numero primo",
-                                         "🏧  Cajero automático",
-                                         "📚  Calificaciones",
-                                         "🛍️   Tienda",
+                ejercicio = mostrar_menu("🌡️ Convertidor de grados",
+                                         "🔢 Calculadora",
+                                         "↔️ Verificar palíndromo",
+                                         "➰ Sucesión Fibonacci",
+                                         "❗ Factorial recursivo",
+                                         "🔸 Numero mayor y menor",
+                                         "#️⃣ Numero primo",
+                                         "🏧 Cajero automático",
+                                         "📚 Calificaciones",
+                                         "🛍️ Tienda",
                                          mensaje_salir="↩️   Volver al menú principal",
                                         nombreMenu="Ejercicios 11 al 20",opcion_inicial=11)
                 
@@ -520,6 +520,7 @@ while not salir: #Bucle de ejecución principal
             pant_carga("cargando ejercicios",tiempo=2.5)
 
             while True:#Bucle de ejercicios del 21 al 30
+                os.system("cls")
                 ejercicio = mostrar_menu("🔡 cantidad de vocales",
                                         "❌ eliminar duplicados",
                                         "🔑 validación de contraseña",
@@ -530,14 +531,8 @@ while not salir: #Bucle de ejecución principal
                                         "🛒 clase Producto",
                                         "🟩 clase Rectangulo",
                                         "📘 clase Libro",
-<<<<<<< Updated upstream
-                                        opcion_inicial=21,
-                                        mensaje_salir="↩️  Volver al menú principal"
-                                        )
-=======
-                                        "↩️  Volver al menú principal",
+                                        mensaje_salir="↩️  Volver al menú principal",
                                         nombreMenu="Ejercicios 11 al 20",opcion_inicial=21)
->>>>>>> Stashed changes
                 
                 match ejercicio:#Ejercicios del 21 al 30 (DESARROLLO)
 
