@@ -439,14 +439,68 @@ while not salir: #Bucle de ejecución principal
                             else:
                                 print("No es primo")
 
-                    case 18:#
-                        pass
+                    case 18:#Simula un cajero automático con saldo y retiros.
+                        saldo = 1000
 
-                    case 19:#
-                        pass
+                        print("Bienvenido al Cajero Automatico")
 
-                    case 20:#
-                        pass
+                        while True:
+                            print("\nSaldo disponible: $", saldo)
+                            opcion = input("¿Deseas hacer un retiro? (s/n): ").lower()
+
+                            if opcion == "n":
+                                print("Gracias por usar el cajero.")
+                                break
+
+                            if opcion == "s":
+                                try:
+                                    monto = float(input("Introduce el monto a retirar: "))
+                                    if monto <= 0:
+                                        print("El monto debe ser mayor que cero.")
+                                    elif monto > saldo:
+                                        print("Fondos insuficientes.")
+                                    else:
+                                        saldo -= monto
+                                        print(f"Has retirado ${monto}. Nuevo saldo: ${saldo}")
+                                except ValueError:
+                                    print("Entrada no valida. Intenta con un numero.")
+                            else:
+                                print("Opción no reconocida. Escribe 's' o 'n'.")
+
+                    case 19:#Crea un diccionario de estudiantes con sus calificaciones.
+                        estudiantes = {
+                            "Ana": 85,
+                            "Luis": 92,
+                            "Maria": 78,
+                            "Carlos": 88,
+                            "Sofia": 95
+                        }
+
+                        for nombre, calificacion in estudiantes.items():
+                            print(f"{nombre} tiene una calificacion de {calificacion}")
+
+                    case 20:#Simula una tienda que permita agregar productos y calcular el total.
+                        carrito = {}
+
+                        print("Bienvenido a la Tienda\n")
+
+                        while True:
+                            producto = input("Introduce el nombre del producto (o 'fin' para terminar): ")
+                            if producto.lower() == "fin":
+                                break
+                            try:
+                                precio = float(input(f"Introduce el precio de '{producto}': "))
+                                carrito[producto] = precio
+                            except ValueError:
+                                print("Precio no valido. Intenta de nuevo.")
+
+                        print("\nProductos en el carrito:")
+                        total = 0
+                        for producto, precio in carrito.items():
+                            print(f"- {producto}: ${precio}")
+                            total += precio
+
+                        print(f"\nTotal a pagar: ${total}")
 
                     case 21:#Volver al menú principal
                         break
