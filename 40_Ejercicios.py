@@ -222,11 +222,11 @@ while not salir: #Bucle de ejecución principal
                 os.system("cls")
                 ejercicio = mostrar_menu("🌡️   Convertidor de grados",
                                          "🔢  Calculadora",
-                                         "↔️   Verificar palíndromo",
+                                         "↔️  Verificar palíndromo",
                                          "➰  Sucesión Fibonacci",
-                                         "❗  Factorial recursivo",
+                                         "❗   Factorial recursivo",
                                          "🔸  Numero mayor y menor",
-                                         "#️⃣   Numero primo",
+                                         "#️⃣  Numero primo",
                                          "🏧  Cajero automático",
                                          "📚  Calificaciones",
                                          "🛍️   Tienda",
@@ -422,12 +422,14 @@ while not salir: #Bucle de ejecución principal
 
                         print("El numero mayor es:", mayor)
                         print("El numero menor es:", menor)
+                        pausar()
 
                     case 17:#Verifica si un número es primo.
                         numero = int(input("Introduce un numero: "))
 
                         if numero <= 1:
                             print("No es primo")
+                            pausar()
                         else:
                             es_primo = True
                             for i in range(2, int(numero ** 0.5) + 1):
@@ -437,9 +439,11 @@ while not salir: #Bucle de ejecución principal
 
                             if es_primo:
                                 print("Es primo")
+                                pausar()
                             else:
                                 print("No es primo")
-
+                                pausar()
+                        
                     case 18:#Simula un cajero automático con saldo y retiros.
                         saldo = 1000
 
@@ -467,6 +471,7 @@ while not salir: #Bucle de ejecución principal
                                     print("Entrada no valida. Intenta con un numero.")
                             else:
                                 print("Opción no reconocida. Escribe 's' o 'n'.")
+                        pausar()
 
                     case 19:#Crea un diccionario de estudiantes con sus calificaciones.
                         estudiantes = {
@@ -479,15 +484,16 @@ while not salir: #Bucle de ejecución principal
 
                         for nombre, calificacion in estudiantes.items():
                             print(f"{nombre} tiene una calificacion de {calificacion}")
+                        pausar()
 
                     case 20:#Simula una tienda que permita agregar productos y calcular el total.
                         carrito = {}
-
                         print("Bienvenido a la Tienda\n")
 
                         while True:
                             producto = input("Introduce el nombre del producto (o 'fin' para terminar): ")
                             if producto.lower() == "fin":
+                                print("Gracias por usar nuestros servicios")
                                 break
                             try:
                                 precio = float(input(f"Introduce el precio de '{producto}': "))
@@ -502,6 +508,7 @@ while not salir: #Bucle de ejecución principal
                             total += precio
 
                         print(f"\nTotal a pagar: ${total}")
+                        pausar()
 
                     case 0:#Volver al menú principal
                         break
@@ -527,22 +534,31 @@ while not salir: #Bucle de ejecución principal
 
                     case 21:#Lee una frase y muestra cuántas vocales tiene
                         pass
+
                     case 22:#Elimina los duplicados de una lista de números
                         pass
+
                     case 23:#Valida una contraseña con reglas mínimas (longitud, número, mayúscula)
                         pass
+
                     case 24:#Crea una agenda de contactos que permita agregar y buscar por nombre
                         pass
+
                     case 25:#Simula un menú de opciones (saludar, calcular, salir)
                         pass
+
                     case 26:#Crea una clase Persona con atributos nombre y edad, e imprime sus datos
                         pass
+
                     case 27:#Implementa una clase CuentaBancaria con métodos para depositar y retirar
                         pass
+
                     case 28:#Diseña una clase Producto que calcule el total con impuestos
                         pass
+
                     case 29:#Crea una clase Rectángulo que calcule el área y el perímetro
                         pass
+
                     case 30:#Implementa una clase Libro con atributos título, autor y año
                         pass
                     case 0:#Volver al menú principal
@@ -781,12 +797,16 @@ while not salir: #Bucle de ejecución principal
 
                     case 36:#
                         pass
+                    
                     case 37:#
                         pass
+
                     case 38:#
                         pass
+
                     case 39:#
                         pass
+
                     case 40:#
                         pass
                     case 0:#Volver al menú principal
