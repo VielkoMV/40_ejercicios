@@ -220,16 +220,16 @@ while not salir: #Bucle de ejecución principal
 
             while True:#Bucle de ejercicios del 11 al 20
                 os.system("cls")
-                ejercicio = mostrar_menu("🌡️ Convertidor de grados",
-                                         "🔢 Calculadora",
-                                         "↔️ Verificar palíndromo",
-                                         "➰ Sucesión Fibonacci",
-                                         "❗ Factorial recursivo",
-                                         "🔸 Numero mayor y menor",
-                                         "#️⃣ Numero primo",
-                                         "🏧 Cajero automático",
-                                         "📚 Calificaciones",
-                                         "🛍️ Tienda",
+                ejercicio = mostrar_menu("🌡️   Convertidor de grados",
+                                         "🔢  Calculadora",
+                                         "↔️   Verificar palíndromo",
+                                         "➰  Sucesión Fibonacci",
+                                         "❗  Factorial recursivo",
+                                         "🔸  Numero mayor y menor",
+                                         "#️⃣   Numero primo",
+                                         "🏧  Cajero automático",
+                                         "📚  Calificaciones",
+                                         "🛍️   Tienda",
                                          mensaje_salir="↩️   Volver al menú principal",
                                         nombreMenu="Ejercicios 11 al 20",opcion_inicial=11)
                 
